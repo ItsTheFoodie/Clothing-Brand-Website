@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Occasions | Lumière</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">LUMIÈRE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="women.html">Women</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="occasions.html">Occasions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="icon">Search</a>
+                <a href="#" class="icon">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Shop by Occasion</h1>
+        <p>Find the perfect piece for every moment</p>
+    </section>
+
+    <!-- Occasions Grid -->
+    <section class="occasions-section">
+        <div class="occasions-grid">
+            <a href="evening.html" class="occasion-card">
+                <div class="occasion-image evening"></div>
+                <div class="occasion-info">
+                    <h3>Evening & Dinner</h3>
+                    <p>Sophisticated elegance for special evenings</p>
+                </div>
+            </a>
+
+            <a href="business.html" class="occasion-card">
+                <div class="occasion-image business"></div>
+                <div class="occasion-info">
+                    <h3>Work & Business</h3>
+                    <p>Polished professionalism for the office</p>
+                </div>
+            </a>
+
+            <a href="casual.html" class="occasion-card">
+                <div class="occasion-image casual"></div>
+                <div class="occasion-info">
+                    <h3>Casual & Weekend</h3>
+                    <p>Relaxed luxury for everyday moments</p>
+                </div>
+            </a>
+
+            <a href="travel.html" class="occasion-card">
+                <div class="occasion-image travel"></div>
+                <div class="occasion-info">
+                    <h3>Travel</h3>
+                    <p>Versatile pieces for the well-traveled</p>
+                </div>
+            </a>
+
+            <a href="formal.html" class="occasion-card">
+                <div class="occasion-image formal"></div>
+                <div class="occasion-info">
+                    <h3>Formal & Black Tie</h3>
+                    <p>Timeless sophistication for grand events</p>
+                </div>
+            </a>
+
+            <a href="active.html" class="occasion-card">
+                <div class="occasion-image active"></div>
+                <div class="occasion-info">
+                    <h3>Active & Sport</h3>
+                    <p>Refined comfort for an active lifestyle</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LUMIÈRE</h4>
+                <p>Luxury fashion for those who understand true elegance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="occasions.html">Occasions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumière. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .page-header {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f1ed 0%, #ffffff 100%);
+            border-bottom: 1px solid #e8e4e0;
+        }
+
+        .page-header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .page-header p {
+            color: #888;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .occasions-section {
+            max-width: 1400px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .occasions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .occasion-card {
+            background: white;
+            border: 1px solid #e8e4e0;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .occasion-card:hover {
+            border-color: #b8860b;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px);
+        }
+
+        .occasion-image {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #d4af37 0%, #c19d3b 100%);
+        }
+
+        .occasion-image.evening {
+            background: linear-gradient(135deg, #2c2416 0%, #4a3f35 100%);
+        }
+
+        .occasion-image.business {
+            background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);
+        }
+
+        .occasion-image.casual {
+            background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);
+        }
+
+        .occasion-image.travel {
+            background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);
+        }
+
+        .occasion-image.formal {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+        }
+
+        .occasion-image.active {
+            background: linear-gradient(135deg, #d4c5b0 0%, #b8a895 100%);
+        }
+
+        .occasion-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1) 0%, transparent 60%);
+        }
+
+        .occasion-info {
+            padding: 2.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .occasion-info h3 {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .occasion-info p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        .occasion-card:hover .occasion-info h3 {
+            color: #b8860b;
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .occasions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .occasion-image {
+                height: 250px;
+            }
+        }
+    </style>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

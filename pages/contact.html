@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Lumière</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="../index.html">LUMIÈRE</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="women.html">Women</a></li>
+                <li><a href="men.html">Men</a></li>
+                <li><a href="kids.html">Kids</a></li>
+                <li><a href="occasions.html">Occasions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#" class="icon">Search</a>
+                <a href="#" class="icon">Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="contact-header">
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                
+                <div class="info-item">
+                    <h3>Flagship Boutique</h3>
+                    <p>123 Fifth Avenue</p>
+                    <p>New York, NY 10001</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Phone</h3>
+                    <p><a href="tel:+1-555-123-4567">+1 (555) 123-4567</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p><a href="mailto:hello@lumiere.com">hello@lumiere.com</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Hours</h3>
+                    <p>Monday - Friday: 10:00 AM - 6:00 PM</p>
+                    <p>Saturday: 11:00 AM - 5:00 PM</p>
+                    <p>Sunday: By Appointment</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">Pinterest</a>
+                    </div>
+                </div>
+            </div>
+
+            <form class="contact-form">
+                <h2>Send us a Message</h2>
+                
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>LUMIÈRE</h4>
+                <p>Luxury fashion for those who understand true elegance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="women.html">Women</a></li>
+                    <li><a href="men.html">Men</a></li>
+                    <li><a href="kids.html">Kids</a></li>
+                    <li><a href="occasions.html">Occasions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Lumière. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <style>
+        .contact-header {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f1ed 0%, #ffffff 100%);
+            border-bottom: 1px solid #e8e4e0;
+        }
+
+        .contact-header h1 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .contact-header p {
+            color: #888;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .contact-section {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .info-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .info-item h3 {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #b8860b;
+            padding-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .info-item a {
+            color: #b8860b;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-item a:hover {
+            color: #1a1a1a;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-links a {
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #b8860b;
+        }
+
+        .contact-form {
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border: 1px solid #e8e4e0;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #e8e4e0;
+            background-color: #f5f1ed;
+            font-family: var(--font-sans);
+            letter-spacing: 0.3px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #b8860b;
+            background-color: #ffffff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            font-size: 0.95rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #1a1a1a;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #b8860b;
+            border-color: #b8860b;
+            color: #1a1a1a;
+        }
+
+        @media (max-width: 768px) {
+            .contact-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+    </style>
+
+    <script src="../js/script.js"></script>
+    <script>
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            if (name && email) {
+                alert('Thank you for reaching out, ' + name + '! We will get back to you shortly at ' + email + '.');
+                this.reset();
+            }
+        });
+    </script>
+</body>
+</html>
