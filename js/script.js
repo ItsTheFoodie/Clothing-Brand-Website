@@ -4,7 +4,8 @@ let cart = JSON.parse(localStorage.getItem('cart')) || [];
 document.addEventListener('DOMContentLoaded', function() {
     // Add to cart
     document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation(); // Prevent card click
             const productCard = this.closest('.product-card');
             const productName = productCard.querySelector('.product-info h3').textContent;
             const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
@@ -35,11 +36,193 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2000);
         });
     });
+    
+    // Product page mapping
+    const productPages = {
+        'classic blazer': '../products/classic-blazer.html',
+        'silk slip dress': '../products/silk-slip-dress.html',
+        'merino wool sweater': '../products/merino-wool-sweater.html',
+        'tailored trousers': '../products/tailored-trousers.html',
+        'linen shirt': '../products/linen-shirt.html',
+        'cashmere scarf': '../products/cashmere-scarf.html',
+        'oxford button-down': '../products/oxford-button-down.html',
+        'wool suit': '../products/wool-suit.html',
+        'party dress': '../products/party-dress.html',
+        'celebration suit': '../products/celebration-suit.html',
+        'wool cardigan': '../products/wool-cardigan.html',
+        'festive cardigan': '../products/festive-cardigan.html',
+        'cotton dress': '../products/cotton-dress.html',
+        'occasion trousers': '../products/occasion-trousers.html',
+        'dress shoes': '../products/dress-shoes.html',
+        'leather belt': '../products/leather-belt.html',
+        'classic trench coat': '../products/trench-coat.html',
+        'evening gown': '../products/evening-gown.html',
+        'white blouse': '../products/white-blouse.html',
+        'tailored jacket': '../products/tailored-jacket.html',
+        'cotton jeans': '../products/cotton-jeans.html',
+        'cashmere cardigan': '../products/cashmere-cardigan.html',
+        'chinos': '../products/men-chinos.html',
+        'henley shirt': '../products/henley-shirt.html',
+        'crew neck sweater': '../products/mens-sweater.html',
+        'track jacket': '../products/track-jacket.html',
+        'yoga pants': '../products/yoga-pants.html',
+        'active tee': '../products/active-tee.html',
+        'polo shirt': '../products/kids-polo.html',
+        'shorts': '../products/kids-shorts.html',
+        'sneakers': '../products/kids-sneakers.html',
+        'wool jacket': '../products/kids-jacket.html',
+        'floral dress': '../products/floral-dress.html',
+        'striped shirt': '../products/striped-shirt.html',
+        'sailing jacket': '../products/sailing-jacket.html',
+        'beach cover-up': '../products/beach-coverup.html',
+        'casual sneakers': '../products/casual-sneakers.html',
+        'loafers': '../products/loafers.html',
+        'bomber jacket': '../products/bomber-jacket.html',
+        'wool beret': '../products/wool-beret.html',
+        'pearl necklace': '../products/pearl-necklace.html',
+        'sunglasses': '../products/sunglasses.html',
+        'leather handbag': '../products/leather-handbag.html',
+        'elegant watch': '../products/elegant-watch.html',
+        'rain jacket': '../products/rain-jacket-kids.html',
+        'ballet flats': '../products/ballet-flats.html',
+        'turtleneck': '../products/turtleneck.html',
+        'pencil skirt': '../products/pencil-skirt.html',
+        'cashmere sweater': '../products/men-cashmere.html',
+        'oxford dress shoes': '../products/men-dress-shoes.html',
+        'silk tie': '../products/silk-tie.html'
+    };
+    
+    // Make product cards clickable
+    document.querySelectorAll('.product-card').forEach(card => {
+        card.style.cursor = 'pointer';
+        
+        card.addEventListener('click', function(e) {
+            // Don't navigate if clicking the add-to-cart button
+            if (e.target.classList.contains('add-to-cart')) return;
+            
+            const productName = this.querySelector('.product-info h3').textContent;
+            const url = productPages[productName.toLowerCase()];
+            
+            if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+    
+    // Initialize wishlist
+    initializeWishlist();
+    
+    // Update cart count on page load
+    updateCartCount();
 });
+
+// COLOR SWATCH & CART/WISHLIST HELPERS
+function changeColor(name,gradient){
+    const img=document.getElementById('productImage');
+    if(img) img.style.background=gradient;
+    document.querySelectorAll('.color-option').forEach(el=>el.style.borderColor='#e8e4e0');
+    if(event && event.target) event.target.style.borderColor='#b8860b';
+}
+
+function addProductCart(n,p){
+    let c=JSON.parse(localStorage.getItem('cart'))||[];
+    let e=c.find(i=>i.name===n);
+    if(e){e.quantity++}else{c.push({name:n,price:p,quantity:1})}
+    localStorage.setItem('cart',JSON.stringify(c));
+    if(typeof updateCartCount==='function'){updateCartCount()}
+    if(typeof showAddedNotification==='function'){showAddedNotification()}
+}
+
+// alias for backwards compatibility
+function addToCart(name,price){
+    addProductCart(name,price);
+}
+
+function addToWishlist(btn,n){
+    let w=JSON.parse(localStorage.getItem('wishlist'))||[];
+    if(w.find(i=>i===n)){
+        w=w.filter(i=>i!==n);
+        btn.textContent='♡ Wishlist';
+        btn.style.color='#888';
+    }else{
+        w.push(n);
+        btn.textContent='♥ In Wishlist';
+        btn.style.color='#b8860b';
+    }
+    localStorage.setItem('wishlist',JSON.stringify(w));
+}
+
+// WISHLIST FUNCTIONALITY
+let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+function initializeWishlist() {
+    // Add wishlist button to product pages if it exists
+    const productDetail = document.querySelector('.product-info-detail');
+    if (productDetail && !document.querySelector('.wishlist-btn')) {
+        const productName = document.querySelector('h1')?.textContent || 'Product';
+        const wishlistBtn = document.createElement('button');
+        wishlistBtn.className = 'wishlist-btn';
+        wishlistBtn.style.cssText = `
+            padding: 0.8rem 1.5rem;
+            background: white;
+            border: 1px solid #e8e4e0;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        `;
+        
+        const isInWishlist = wishlist.some(item => item.toLowerCase() === productName.toLowerCase());
+        wishlistBtn.textContent = isInWishlist ? '♥ In Wishlist' : '♡ Add to Wishlist';
+        wishlistBtn.style.color = isInWishlist ? '#b8860b' : '#888';
+        
+        wishlistBtn.addEventListener('click', function() {
+            toggleWishlist(productName, this);
+        });
+        
+        // Add next to Add to Cart button
+        const cartBtn = document.querySelector('button[onclick*="addToCart"]');
+        if (cartBtn) {
+            cartBtn.parentElement.style.display = 'flex';
+            cartBtn.parentElement.style.gap = '1rem';
+            cartBtn.parentElement.appendChild(wishlistBtn);
+        }
+    }
+}
+
+function toggleWishlist(productName, btn) {
+    const index = wishlist.findIndex(item => item.toLowerCase() === productName.toLowerCase());
+    
+    if (index > -1) {
+        wishlist.splice(index, 1);
+        btn.textContent = '♡ Add to Wishlist';
+        btn.style.color = '#888';
+    } else {
+        wishlist.push(productName);
+        btn.textContent = '♥ In Wishlist';
+        btn.style.color = '#b8860b';
+    }
+    
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
+
+function viewWishlist() {
+    if (wishlist.length === 0) {
+        alert('Your wishlist is empty!');
+        return;
+    }
+    
+    let content = 'YOUR WISHLIST:\n\n';
+    wishlist.forEach(item => {
+        content += '• ' + item + '\n';
+    });
+    alert(content);
+}
 
 // Update cart count
 function updateCartCount() {
-    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
     const navIcons = document.querySelector('.nav-icons');
     if (navIcons) {
         const cartButton = navIcons.querySelectorAll('a')[1];
@@ -146,6 +329,74 @@ function removeFromCart(index) {
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     openCartModal();
+}
+
+// CUSTOM NOTIFICATION SYSTEM
+function showAddedNotification() {
+    let notification = document.getElementById('addedNotification');
+    
+    if (!notification) {
+        notification = document.createElement('div');
+        notification.id = 'addedNotification';
+        notification.style.cssText = `
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #1a1a1a;
+            color: white;
+            padding: 1.5rem 2rem;
+            font-family: 'Segoe UI', sans-serif;
+            border: 1px solid #b8860b;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            @keyframes slideOut {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(400px);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        document.body.appendChild(notification);
+    }
+    
+    notification.innerHTML = `
+        <span style="color: #b8860b; font-size: 1.5rem;">✓</span>
+        <div>
+            <p style="margin: 0; font-weight: 500; font-size: 1rem;">Added to Cart</p>
+        </div>
+    `;
+    notification.style.display = 'flex';
+    notification.style.animation = 'slideIn 0.3s ease';
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 300);
+    }, 2000);
 }
 
 /* ===== SEARCH FUNCTIONALITY ===== */
@@ -554,3 +805,136 @@ document.querySelectorAll('a').forEach(link => {
         this.style.outline = 'none';
     });
 });
+/* ===== AUTO-ENHANCE PRODUCT PAGES ===== */
+document.addEventListener('DOMContentLoaded', () => {
+    // Auto-enhance product pages with color functionality if not already present
+    const productImage = document.getElementById('productImage');
+    if (productImage && !window.productEnhanced) {
+        window.productEnhanced = true;
+        // Initialize with proper styling for color changes
+        if (!productImage.style.transition) {
+            productImage.style.transition = 'all 0.3s ease';
+        }
+    }
+});
+// Insert one-line helper under review name inputs on product pages
+// and provide full review system (getDeviceId, submit/edit/delete/display)
+let currentRating = 0;
+let currentDeviceId = null;
+
+function getDeviceId() {
+    let id = localStorage.getItem('deviceId');
+    if (!id) {
+        id = 'device_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        localStorage.setItem('deviceId', id);
+    }
+    currentDeviceId = id;
+    return id;
+}
+
+function setRating(rating) {
+    currentRating = rating;
+    const ratingInput = document.getElementById('reviewRating');
+    if (ratingInput) ratingInput.value = rating;
+    document.querySelectorAll('.star-btn').forEach((btn, idx) => {
+        btn.style.opacity = idx < rating ? '1' : '0.3';
+        btn.style.color = idx < rating ? '#b8860b' : '#1a1a1a';
+    });
+}
+
+function submitReview(e, productName) {
+    e.preventDefault();
+    const name = document.getElementById('reviewName').value;
+    const text = document.getElementById('reviewText').value;
+    const rating = document.getElementById('reviewRating').value;
+    const deviceId = getDeviceId();
+    if (!rating) {
+        alert('Please select a rating');
+        return;
+    }
+    let reviews = JSON.parse(localStorage.getItem('reviews_' + productName) || '[]');
+    let existingIndex = reviews.findIndex(r => r.deviceId === deviceId);
+    if (existingIndex >= 0) {
+        reviews[existingIndex] = { name, rating, text, date: new Date().toLocaleDateString(), deviceId };
+    } else {
+        reviews.unshift({ name, rating, text, date: new Date().toLocaleDateString(), deviceId });
+    }
+    localStorage.setItem('reviews_' + productName, JSON.stringify(reviews));
+    document.getElementById('reviewName').value = '';
+    document.getElementById('reviewText').value = '';
+    document.getElementById('reviewRating').value = '0';
+    currentRating = 0;
+    document.querySelectorAll('.star-btn').forEach(btn => btn.style.opacity = '0.3');
+    displayReviews(productName);
+}
+
+function editReview(productName) {
+    const reviews = JSON.parse(localStorage.getItem('reviews_' + productName) || '[]');
+    const myReview = reviews.find(r => r.deviceId === currentDeviceId);
+    if (myReview) {
+        document.getElementById('reviewName').value = myReview.name;
+        document.getElementById('reviewText').value = myReview.text;
+        setRating(myReview.rating);
+        window.scrollTo(0, document.querySelector('form').offsetTop - 100);
+    }
+}
+
+function deleteReview(productName) {
+    let reviews = JSON.parse(localStorage.getItem('reviews_' + productName) || '[]');
+    reviews = reviews.filter(r => r.deviceId !== currentDeviceId);
+    localStorage.setItem('reviews_' + productName, JSON.stringify(reviews));
+    displayReviews(productName);
+}
+
+function displayReviews(productName) {
+    let reviews = JSON.parse(localStorage.getItem('reviews_' + productName) || '[]');
+    let existingDiv = document.getElementById('userReviews');
+    if (existingDiv) existingDiv.remove();
+    if (reviews.length > 0) {
+        let reviewsDiv = document.createElement('div');
+        reviewsDiv.id = 'userReviews';
+        reviews.forEach(r => {
+            const isMyReview = r.deviceId === currentDeviceId;
+            const stars = '★'.repeat(r.rating) + '☆'.repeat(5 - r.rating);
+            let reviewHTML = '<div style="padding:1.5rem;border:1px solid ' + (isMyReview ? '#b8860b' : '#e8e4e0') + ';margin-bottom:1rem;background:' + (isMyReview ? '#fefaf3' : 'white') + '"><div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:1rem"><div><h4 style="margin:0;font-family:Garamond,serif">' + r.name + (isMyReview ? ' (You)' : '') + ' </h4><p style="color:#b8860b;margin:0.5rem 0">' + stars + '</p><p style="color:#888;font-size:0.9rem;margin:0.5rem 0">' + r.date + '</p></div>';
+            if (isMyReview) {
+                reviewHTML += '<div style="display:flex;gap:0.5rem"><button type="button" onclick="editReview(\'' + productName + '\')" style="background:#b8860b;color:white;border:none;padding:0.4rem 0.8rem;cursor:pointer;font-size:0.9rem;border-radius:3px">Edit</button>';
+                reviewHTML += '<button type="button" onclick="deleteReview(\'' + productName + '\')" style="background:#e74c3c;color:white;border:none;padding:0.4rem 0.8rem;cursor:pointer;font-size:0.9rem;border-radius:3px">Delete</button></div>';
+            }
+            reviewHTML += '</div><p style="color:#555;line-height:1.6">' + r.text + '</p></div>';
+            reviewsDiv.innerHTML += reviewHTML;
+        });
+        let formSection = document.querySelector('form').closest('section');
+        formSection.insertBefore(reviewsDiv, formSection.querySelector('form'));
+    }
+}
+
+// helper note insertion (kept)
+document.addEventListener('DOMContentLoaded', function(){
+    try{
+        var el = document.getElementById('reviewName');
+        if(el && !el.parentNode.querySelector('.review-note')){
+            var note = document.createElement('p');
+            note.className = 'review-note';
+            note.style.fontSize = '0.9rem';
+            note.style.color = '#666';
+            note.style.marginTop = '0.5rem';
+            note.textContent = 'One review per device. Edit by submitting again.';
+            el.parentNode.insertBefore(note, el.nextSibling);
+        }
+    }catch(e){/* safe fail */}
+});
+
+// initialize reviews when product page loads
+function initReviews() {
+    var form = document.querySelector('form[onsubmit^="submitReview"]');
+    if(form){
+        var match = form.getAttribute('onsubmit').match(/'([^']+)'/);
+        if(match){
+            var productName = match[1];
+            getDeviceId();
+            displayReviews(productName);
+        }
+    }
+}
+document.addEventListener('DOMContentLoaded', initReviews);
