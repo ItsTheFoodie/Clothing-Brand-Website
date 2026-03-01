@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shop | Lumière</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo"><a href="../index.html">LUMIÈRE</a></div>
+      <ul class="nav-menu">
+        <li><a href="women.html">Women</a></li>
+        <li><a href="men.html">Men</a></li>
+        <li><a href="kids.html">Kids</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-icons"><a href="#" class="icon">Search</a><a href="#" class="icon">Cart</a></div>
+    </div>
+  </nav>
+
+  <main style="max-width:1100px;margin:3rem auto;padding:0 1rem">
+    <header style="margin-bottom:2rem">
+      <h1 style="font-family:Garamond,serif">Shop</h1>
+      <p style="color:#666">Browse our curated collections</p>
+    </header>
+
+    <section id="product-list" class="collections-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem">
+      <!-- Products will be rendered here -->
+    </section>
+  </main>
+
+  <script src="../js/products-database.js"></script>
+  <script src="../js/render-products.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>
