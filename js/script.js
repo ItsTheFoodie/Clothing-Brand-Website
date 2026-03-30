@@ -2,11 +2,12 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add to cart
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-        button.addEventListener('click', function(e) {
+    // Use event delegation for add-to-cart (works with dynamically rendered elements)
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('add-to-cart')) {
             e.stopPropagation(); // Prevent card click
-            const productCard = this.closest('.product-card');
+            const button = e.target;
+            const productCard = button.closest('.product-card');
             const productName = productCard.querySelector('.product-info h3').textContent;
             const productPrice = parseFloat(productCard.querySelector('.product-price').textContent.replace('$', ''));
             
@@ -27,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
             updateCartCount();
             
             // Show visual feedback
-            const originalText = this.textContent;
-            this.textContent = '✓ Added to Cart';
-            this.style.backgroundColor = '#b8860b';
+            const originalText = button.textContent;
+            button.textContent = '✓ Added to Cart';
+            button.style.backgroundColor = '#b8860b';
             setTimeout(() => {
-                this.textContent = originalText;
-                this.style.backgroundColor = '';
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
             }, 2000);
-        });
+        }
     });
     
     // Product page mapping
@@ -92,21 +93,25 @@ document.addEventListener('DOMContentLoaded', function() {
         'silk tie': '../products/silk-tie.html'
     };
     
-    // Make product cards clickable
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.style.cursor = 'pointer';
-        
-        card.addEventListener('click', function(e) {
-            // Don't navigate if clicking the add-to-cart button
-            if (e.target.classList.contains('add-to-cart')) return;
-            
-            const productName = this.querySelector('.product-info h3').textContent;
+    // Use event delegation for product card clicks (works with dynamically rendered elements)
+    document.addEventListener('click', function(e) {
+        const productCard = e.target.closest('.product-card');
+        if (productCard && !e.target.classList.contains('add-to-cart')) {
+            const productName = productCard.querySelector('.product-info h3').textContent;
             const url = productPages[productName.toLowerCase()];
             
             if (url) {
                 window.location.href = url;
             }
-        });
+        }
+    });
+    
+    // Make product cards have pointer cursor (for static cards and dynamically rendered ones)
+    document.addEventListener('mouseover', function(e) {
+        const productCard = e.target.closest('.product-card');
+        if (productCard) {
+            productCard.style.cursor = 'pointer';
+        }
     });
     
     // Initialize wishlist

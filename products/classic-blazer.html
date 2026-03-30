@@ -23,27 +23,27 @@
     </div>
 </nav>
 
-<section style="max-width:900px;margin:3rem auto;padding:0 2rem">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:4rem">
-        <div id="productImage" style="height:500px;background:linear-gradient(135deg, #f5f1ed 0%, #e8dfd0 100%);border:1px solid #e8e4e0;transition:all 0.3s ease">
+<section class="max-width-900">
+    <div class="grid-2col">
+        <div id="productImage" class="product-image-box" style="background:linear-gradient(135deg, #f5f1ed 0%, #e8dfd0 100%)">
             <img src="https://i.etsystatic.com/5609612/r/il/d60bae/5560912007/il_fullxfull.5560912007_ishv.jpg" alt="Classic Blazer" style="width:100%;height:100%;object-fit:cover">
         </div>
         
         <div>
-            <h1 style="font-family:Garamond,serif;font-size:2.5rem;margin:0">Classic Blazer</h1>
-            <p style="color:#888">Women's Collection</p>
-            <div style="margin:1.5rem 0">
-                <div style="color:#b8860b;font-size:1.2rem">★ ★ ★ ★ ★</div>
-                <span style="color:#888">(142 reviews)</span>
-                <p style="font-family:Garamond,serif;font-size:2rem;margin:1rem 0 0 0;color:#1a1a1a">$695</p>
+            <h1 class="heading-lg">Classic Blazer</h1>
+            <p class="text-muted">Women's Collection</p>
+            <div class="mt-1-5">
+                <div class="text-gold-lg">★ ★ ★ ★ ★</div>
+                <span class="text-muted">(142 reviews)</span>
+                <p class="price-text">$695</p>
             </div>
-            <div style="margin-bottom:2rem">
-                <h3 style="font-family:Garamond,serif;margin:0 0 1rem 0">Description</h3>
-                <p style="color:#555;line-height:1.8">Beautifully tailored in crisp linen. A versatile piece that brings quiet elegance and works with everything in your wardrobe.</p>
+            <div class="mb-2">
+                <h3 class="heading-sm text-garamond">Description</h3>
+                <p class="text-gray">Beautifully tailored in crisp linen. A versatile piece that brings quiet elegance and works with everything in your wardrobe.</p>
             </div>
-            <div style="margin-bottom:2rem">
-                <label style="display:block;margin-bottom:0.5rem;font-weight:500">Size</label>
-                <select style="width:100%;padding:0.8rem;border:1px solid #e8e4e0;margin-bottom:1rem">
+            <div class="mb-2">
+                <label class="form-label">Size</label>
+                <select class="form-select">
                     <option>Select Size</option>
                     <option>XS</option>
                     <option>S</option>
@@ -52,15 +52,15 @@
                     <option>XL</option>
                 </select>
             </div>
-            <div style="margin-bottom:2rem">
-                <label style="display:block;margin-bottom:0.5rem;font-weight:500">Color</label>
-                <div style="display:flex;gap:1rem">
+            <div class="mb-2">
+                <label class="form-label">Color</label>
+                <div class="colors-grid">
                     <div style="width:50px;height:50px;background:#f5f1ed;border:3px solid #b8860b;cursor:pointer" onclick="changeColor('cream','linear-gradient(135deg, #f5f1ed 0%, #e8dfd0 100%)')" class="color-option" title="Cream"></div>
                     <div style="width:50px;height:50px;background:#1a1a1a;border:2px solid #e8e4e0;cursor:pointer" onclick="changeColor('black','linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)')" class="color-option" title="Black"></div>
                     <div style="width:50px;height:50px;background:#4a5568;border:2px solid #e8e4e0;cursor:pointer" onclick="changeColor('navy','linear-gradient(135deg, #4a5568 0%, #3a4558 100%)')" class="color-option" title="Navy"></div>
                 </div>
             </div>
-            <div style="display:flex;gap:1rem">
+            <div class="colors-grid">
                 <button onclick="addProductCart('Classic Blazer',695)" style="flex:1;padding:0.8rem;background:#1a1a1a;color:white;border:none;cursor:pointer;font-weight:500;font-family:Segoe UI,sans-serif">Add to Cart</button>
                 <button onclick="addToWishlist(this,'Classic Blazer')" style="flex:1;padding:0.8rem;background:white;border:1px solid #e8e4e0;cursor:pointer;font-weight:500;font-family:Segoe UI,sans-serif">♡ Wishlist</button>
             </div>
@@ -68,16 +68,16 @@
     </div>
 </section>
 
-<section style="max-width:900px;margin:4rem auto;padding:0 2rem">
-    <h2 style="font-family:Garamond,serif;font-size:2rem;margin-bottom:2rem">Customer Reviews</h2>
+<section class="reviews-section">
+    <h2 class="heading-md">Customer Reviews</h2>
     <form onsubmit="submitReview(event,'Classic Blazer')" style="padding:1.5rem;border:1px solid #e8e4e0;margin-bottom:2rem;background:#fafafa">
-        <div style="margin-bottom:1rem">
-            <label style="display:block;margin-bottom:0.5rem;font-weight:500">Your Name</label>
+        <div class="mb-1">
+            <label class="form-label">Your Name</label>
             <input type="text" id="reviewName" style="width:100%;padding:0.8rem;border:1px solid #e8e4e0;font-family:Segoe UI,sans-serif" required>
         </div>
-        <div style="margin-bottom:1rem">
-            <label style="display:block;margin-bottom:0.5rem;font-weight:500">Rating</label>
-            <div style="display:flex;gap:0.5rem">
+        <div class="mb-1">
+            <label class="form-label">Rating</label>
+            <div class="stars-container">
                 <button type="button" class="star-btn" onclick="setRating(1)" style="background:none;border:none;font-size:2rem;cursor:pointer;opacity:0.3;transition:all 0.2s">★</button>
                 <button type="button" class="star-btn" onclick="setRating(2)" style="background:none;border:none;font-size:2rem;cursor:pointer;opacity:0.3;transition:all 0.2s">★</button>
                 <button type="button" class="star-btn" onclick="setRating(3)" style="background:none;border:none;font-size:2rem;cursor:pointer;opacity:0.3;transition:all 0.2s">★</button>
@@ -86,8 +86,8 @@
             </div>
             <input type="hidden" id="reviewRating" value="0">
         </div>
-        <div style="margin-bottom:1rem">
-            <label style="display:block;margin-bottom:0.5rem;font-weight:500">Your Review</label>
+        <div class="mb-1">
+            <label class="form-label">Your Review</label>
             <textarea id="reviewText" style="width:100%;padding:0.8rem;border:1px solid #e8e4e0;font-family:Segoe UI,sans-serif;min-height:100px" required></textarea>
         </div>
         <button type="submit" style="padding:0.8rem 2rem;background:#1a1a1a;color:white;border:none;cursor:pointer;font-weight:500;font-family:Segoe UI,sans-serif">Submit Review</button>

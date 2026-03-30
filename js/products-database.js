@@ -6,13 +6,13 @@ const productsDatabase = {
   women: [
     {
       id: 'casual-sneakers',
-      name: 'Casual Sneakers',
+      name: 'Casual Sneakers of Gold',
       category: 'Women',
-      price: 285,
+      price: 28500,
       rating: 5,
       reviews: 167,
       description: 'Comfortable canvas sneakers perfect for everyday wear.',
-      image: 'linear-gradient(135deg, #e8d5c4 0%, #f5e6d3 100%)',
+      image: 'url("../images/gold-sneaker.webp")',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Beige', 'Grey'],
       highlights: 'All-day comfort'
@@ -231,7 +231,7 @@ const productsDatabase = {
   men: [
     {
       id: 'men-cashmere',
-      name: 'Cashmere Sweater',
+      name: 'Luxury Cashmere Sweater',
       category: 'Men',
       price: 695,
       rating: 5,
