@@ -99,6 +99,15 @@
       }
     });
 
+    // Render all products on shop page
+    if (document.getElementById('product-list')) {
+      if (typeof getAllProducts === 'function') {
+        const products = getAllProducts();
+        renderProducts('product-list', products);
+      }
+    }
+  });
+
     // Handle shop page - render all products in elements with id="product-list"
     const productListElement = document.getElementById('product-list');
     if (productListElement && typeof getAllProducts === 'function') {

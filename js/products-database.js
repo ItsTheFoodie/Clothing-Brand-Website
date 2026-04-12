@@ -6,16 +6,17 @@ const productsDatabase = {
   women: [
     {
       id: 'casual-sneakers',
-      name: 'Casual Sneakers of Gold',
+      name: 'Casual Sneakers',
       category: 'Women',
-      price: 28500,
+      price: 2500,
       rating: 5,
       reviews: 167,
       description: 'Comfortable canvas sneakers perfect for everyday wear.',
-      image: 'url("../images/gold-sneaker.webp")',
+      image: 'url("../images/casual-sneakers.jpg")',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Beige', 'Grey'],
-      highlights: 'All-day comfort'
+      highlights: 'All-day comfort',
+      occasions: ['casual', 'everyday']
     },
     {
       id: 'evening-gown',
@@ -28,7 +29,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Black', 'Deep Plum', 'Navy'],
-      highlights: 'Premium silk, floor-length'
+      highlights: 'Premium silk, floor-length',
+      occasions: ['formal', 'evening', 'party']
     },
     {
       id: 'white-blouse',
@@ -41,7 +43,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #f5f5f0 0%, #ffffff 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Ivory', 'Off-white'],
-      highlights: 'Versatile essential'
+      highlights: 'Versatile essential',
+      occasions: ['casual', 'business', 'everyday']
     },
     {
       id: 'floral-dress',
@@ -54,7 +57,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a574 0%, #c9936d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Floral Mix', 'Rose Garden', 'Botanical'],
-      highlights: 'Seasonal favorite'
+      highlights: 'Seasonal favorite',
+      occasions: ['casual', 'party', 'spring']
     },
     {
       id: 'cotton-dress',
@@ -67,7 +71,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #e8c4b8 0%, #d4a89f 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Natural', 'Sage', 'Taupe'],
-      highlights: 'Breathable comfort'
+      highlights: 'Breathable comfort',
+      occasions: ['casual', 'everyday']
     },
     {
       id: 'silk-slip-dress',
@@ -80,7 +85,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a1a1a 0%, #1a0a0a 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Black', 'Champagne', 'Charcoal'],
-      highlights: 'Pure silk elegance'
+      highlights: 'Pure silk elegance',
+      occasions: ['formal', 'evening', 'party']
     },
     {
       id: 'pencil-skirt',
@@ -93,7 +99,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Professional style'
+      highlights: 'Professional style',
+      occasions: ['business', 'formal']
     },
     {
       id: 'party-dress',
@@ -106,7 +113,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #c41e3a 0%, #8a0f2d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Ruby Red', 'Emerald', 'Sapphire'],
-      highlights: 'Statement piece'
+      highlights: 'Statement piece',
+      occasions: ['party', 'formal']
     },
     {
       id: 'wool-cardigan',
@@ -119,7 +127,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Camel', 'Cream', 'Charcoal'],
-      highlights: 'Timeless layering'
+      highlights: 'Timeless layering',
+      occasions: ['casual', 'everyday', 'winter']
     },
     {
       id: 'cashmere-cardigan',
@@ -132,7 +141,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a89f 0%, #c9936d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Cream', 'Grey', 'Blush'],
-      highlights: 'Ultimate luxury'
+      highlights: 'Ultimate luxury',
+      occasions: ['casual', 'formal', 'luxury']
     },
     {
       id: 'turtleneck',
@@ -145,7 +155,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d3d3d 0%, #1a1a1a 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Black', 'Navy', 'Burgundy'],
-      highlights: 'Iconic classic'
+      highlights: 'Iconic classic',
+      occasions: ['casual', 'everyday', 'winter']
     },
     {
       id: 'cotton-jeans',
@@ -158,7 +169,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1e3a5f 0%, #0f1d3d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Classic Blue', 'Dark Indigo', 'Black'],
-      highlights: 'Everyday essential'
+      highlights: 'Everyday essential',
+      occasions: ['casual', 'everyday']
     },
     {
       id: 'trench-coat',
@@ -171,21 +183,10 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a574 0%, #c9936d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Khaki', 'Camel', 'Navy'],
-      highlights: 'Timeless outerwear'
+      highlights: 'Timeless outerwear',
+      occasions: ['casual', 'formal', 'everyday']
     },
-    {
-      id: 'festive-cardigan',
-      name: 'Festive Cardigan',
-      category: 'Women',
-      price: 625,
-      rating: 5,
-      reviews: 145,
-      description: 'Decorative cardigan perfect for celebrations and festive occasions.',
-      image: 'linear-gradient(135deg, #c41e3a 0%, #8a0f2d 100%)',
-      sizes: ['XS', 'S', 'M', 'L', 'XL'],
-      colors: ['Holiday Red', 'Forest Green', 'Gold'],
-      highlights: 'Celebratory style'
-    },
+      
     {
       id: 'leather-handbag',
       name: 'Leather Handbag',
@@ -197,7 +198,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['One Size'],
       colors: ['Brown', 'Black', 'Tan'],
-      highlights: 'Versatile accessory'
+      highlights: 'Versatile accessory',
+      occasions: ['casual', 'formal', 'everyday']
     },
     {
       id: 'ballet-flats',
@@ -210,7 +212,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a89f 0%, #c9936d 100%)',
       sizes: ['5', '6', '7', '8', '9', '10', '11'],
       colors: ['Nude', 'Black', 'Grey'],
-      highlights: 'Comfortable chic'
+      highlights: 'Comfortable chic',
+      occasions: ['casual', 'formal', 'everyday']
     },
     {
       id: 'beach-coverup',
@@ -223,7 +226,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #f5e6d3 0%, #e8d5c4 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Natural', 'Cream'],
-      highlights: 'Resort wear'
+      highlights: 'Resort wear',
+      occasions: ['beach', 'vacation', 'summer']
     }
   ],
 
@@ -240,7 +244,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a574 0%, #c9936d 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Cream', 'Grey', 'Navy'],
-      highlights: 'Ultimate comfort and warmth'
+      highlights: 'Ultimate comfort and warmth',
+      occasions: ['casual', 'formal', 'winter']
     },
     {
       id: 'oxford-button-down',
@@ -253,7 +258,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #f5f5f0 0%, #ffffff 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['White', 'Light Blue', 'Pale Pink'],
-      highlights: 'Versatile classic'
+      highlights: 'Versatile classic',
+      occasions: ['business', 'casual', 'formal']
     },
     {
       id: 'striped-shirt',
@@ -266,7 +272,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1e3a5f 0%, #0f1d3d 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Navy Stripes', 'Grey Stripes', 'Black Stripes'],
-      highlights: 'Timeless pattern'
+      highlights: 'Timeless pattern',
+      occasions: ['casual', 'business']
     },
     {
       id: 'henley-shirt',
@@ -279,7 +286,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d3d3d 0%, #1a1a1a 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Casual comfort'
+      highlights: 'Casual comfort',
+      occasions: ['casual', 'everyday']
     },
     {
       id: 'linen-shirt',
@@ -292,7 +300,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #e8d5c4 0%, #f5e6d3 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Natural', 'White', 'Khaki'],
-      highlights: 'Summer essential'
+      highlights: 'Summer essential',
+      occasions: ['casual', 'summer', 'vacation']
     },
     {
       id: 'mens-sweater',
@@ -305,7 +314,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Camel', 'Navy', 'Charcoal'],
-      highlights: 'Classic warmth'
+      highlights: 'Classic warmth',
+      occasions: ['casual', 'everyday', 'winter']
     },
     {
       id: 'men-chinos',
@@ -318,7 +328,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a574 0%, #c9936d 100%)',
       sizes: ['28', '30', '32', '34', '36', '38'],
       colors: ['Khaki', 'Navy', 'Grey'],
-      highlights: 'Everyday versatile'
+      highlights: 'Everyday versatile',
+      occasions: ['casual', 'business']
     },
     {
       id: 'occasion-trousers',
@@ -331,7 +342,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
       sizes: ['28', '30', '32', '34', '36', '38'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Professional elegance'
+      highlights: 'Professional elegance',
+      occasions: ['formal', 'business']
     },
     {
       id: 'wool-suit',
@@ -344,7 +356,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%)',
       sizes: ['36', '38', '40', '42', '44'],
       colors: ['Charcoal', 'Navy', 'Black'],
-      highlights: 'Signature tailoring'
+      highlights: 'Signature tailoring',
+      occasions: ['formal', 'business', 'wedding']
     },
     {
       id: 'bomber-jacket',
@@ -357,7 +370,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d2b1f 0%, #2a1a11 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Black', 'Tan', 'Navy'],
-      highlights: 'Modern style'
+      highlights: 'Modern style',
+      occasions: ['casual', 'active']
     },
     {
       id: 'sailing-jacket',
@@ -370,7 +384,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1e3a5f 0%, #0f1d3d 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Navy', 'Light Blue', 'White'],
-      highlights: 'Adventure ready'
+      highlights: 'Adventure ready',
+      occasions: ['active', 'outdoor', 'travel']
     },
     {
       id: 'track-jacket',
@@ -383,7 +398,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d3d3d 0%, #1a1a1a 100%)',
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Black', 'Grey', 'Navy'],
-      highlights: 'Athletic style'
+      highlights: 'Athletic style',
+      occasions: ['active', 'casual']
     },
     {
       id: 'men-leather-belt',
@@ -396,7 +412,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['30', '32', '34', '36', '38'],
       colors: ['Brown', 'Black', 'Tan'],
-      highlights: 'Essential accessory'
+      highlights: 'Essential accessory',
+      occasions: ['casual', 'formal', 'everyday']
     },
     {
       id: 'men-dress-shoes',
@@ -409,7 +426,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a1a1a 0%, #0a0a0a 100%)',
       sizes: ['7', '8', '9', '10', '11', '12', '13'],
       colors: ['Black', 'Brown', 'Burgundy'],
-      highlights: 'Formal elegance'
+      highlights: 'Formal elegance',
+      occasions: ['formal', 'business']
     },
     {
       id: 'loafers',
@@ -422,7 +440,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b6f47 0%, #6b5f37 100%)',
       sizes: ['6', '7', '8', '9', '10', '11', '12', '13'],
       colors: ['Burgundy', 'Black', 'Tan'],
-      highlights: 'Timeless comfort'
+      highlights: 'Timeless comfort',
+      occasions: ['casual', 'business']
     },
     {
       id: 'silk-tie',
@@ -435,7 +454,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d2b1f 0%, #2a1a11 100%)',
       sizes: ['One Size'],
       colors: ['Navy', 'Burgundy', 'Silver'],
-      highlights: 'Sophisticated accessory'
+      highlights: 'Sophisticated accessory',
+      occasions: ['formal', 'business', 'wedding']
     }
   ],
 
@@ -452,7 +472,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1e3a5f 0%, #0f1d3d 100%)',
       sizes: ['2', '4', '6', '8', '10', '12'],
       colors: ['Navy', 'Red', 'White'],
-      highlights: 'School essential'
+      highlights: 'School essential',
+      occasions: ['casual', 'school', 'everyday']
     },
     {
       id: 'kids-shorts',
@@ -465,7 +486,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a574 0%, #c9936d 100%)',
       sizes: ['2', '4', '6', '8', '10', '12'],
       colors: ['Khaki', 'Navy', 'Grey'],
-      highlights: 'Playtime ready'
+      highlights: 'Playtime ready',
+      occasions: ['casual', 'play', 'summer']
     },
     {
       id: 'kids-jacket',
@@ -478,7 +500,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d2b1f 0%, #2a1a11 100%)',
       sizes: ['2', '4', '6', '8', '10', '12'],
       colors: ['Black', 'Navy', 'Brown'],
-      highlights: 'Cozy warmth'
+      highlights: 'Cozy warmth',
+      occasions: ['casual', 'winter', 'everyday']
     },
     {
       id: 'kids-sneakers',
@@ -491,7 +514,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #e8d5c4 0%, #f5e6d3 100%)',
       sizes: ['12', '1', '2', '3', '4', '5', '6'],
       colors: ['White', 'Black', 'Grey'],
-      highlights: 'Active support'
+      highlights: 'Active support',
+      occasions: ['casual', 'active', 'play']
     },
     {
       id: 'rain-jacket-kids',
@@ -504,7 +528,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #c41e3a 0%, #8a0f2d 100%)',
       sizes: ['2', '4', '6', '8', '10', '12'],
       colors: ['Red', 'Yellow', 'Blue'],
-      highlights: 'Weather protection'
+      highlights: 'Weather protection',
+      occasions: ['outdoor', 'rain', 'school']
     }
   ],
 
@@ -521,7 +546,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #f0e68c 0%, #daa520 100%)',
       sizes: ['One Size'],
       colors: ['White Pearl', 'Golden Pearl'],
-      highlights: 'Classic elegance'
+      highlights: 'Classic elegance',
+      occasions: ['formal', 'party', 'evening']
     },
     {
       id: 'elegant-watch',
@@ -534,7 +560,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #c9b037 0%, #a68c2a 100%)',
       sizes: ['One Size'],
       colors: ['Gold', 'Silver', 'Rose Gold'],
-      highlights: 'Premium craftsmanship'
+      highlights: 'Premium craftsmanship',
+      occasions: ['formal', 'business', 'everyday']
     },
     {
       id: 'sunglasses',
@@ -547,7 +574,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a1a1a 0%, #0a0a0a 100%)',
       sizes: ['One Size'],
       colors: ['Black', 'Tortoiseshell', 'Brown'],
-      highlights: 'UV protection'
+      highlights: 'UV protection',
+      occasions: ['casual', 'beach', 'outdoor']
     },
     {
       id: 'leather-belt',
@@ -560,7 +588,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['30', '32', '34', '36', '38'],
       colors: ['Brown', 'Black', 'Cognac'],
-      highlights: 'Timeless essential'
+      highlights: 'Timeless essential',
+      occasions: ['casual', 'formal', 'everyday']
     },
     {
       id: 'wool-beret',
@@ -573,7 +602,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d3d3d 0%, #1a1a1a 100%)',
       sizes: ['One Size'],
       colors: ['Black', 'Navy', 'Camel'],
-      highlights: 'Parisian chic'
+      highlights: 'Parisian chic',
+      occasions: ['casual', 'formal', 'winter']
     },
     {
       id: 'cashmere-scarf',
@@ -586,7 +616,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #d4a89f 0%, #c9936d 100%)',
       sizes: ['One Size'],
       colors: ['Cream', 'Grey', 'Burgundy'],
-      highlights: 'Pure luxury'
+      highlights: 'Pure luxury',
+      occasions: ['casual', 'formal', 'winter']
     }
   ],
 
@@ -603,7 +634,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
       sizes: ['36', '38', '40', '42', '44'],
       colors: ['Black', 'Navy', 'Charcoal'],
-      highlights: 'Special occasion'
+      highlights: 'Special occasion',
+      occasions: ['formal', 'party', 'wedding']
     },
     {
       id: 'tailored-jacket',
@@ -616,7 +648,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%)',
       sizes: ['36', '38', '40', '42', '44'],
       colors: ['Black', 'Navy', 'Burgundy'],
-      highlights: 'Professional style'
+      highlights: 'Professional style',
+      occasions: ['business', 'formal']
     },
     {
       id: 'tailored-trousers',
@@ -629,7 +662,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)',
       sizes: ['28', '30', '32', '34', '36', '38'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Precise tailoring'
+      highlights: 'Precise tailoring',
+      occasions: ['business', 'formal']
     },
     {
       id: 'classic-blazer',
@@ -642,7 +676,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a2a2a 0%, #0a0a0a 100%)',
       sizes: ['36', '38', '40', '42', '44'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Versatile classic'
+      highlights: 'Versatile classic',
+      occasions: ['business', 'formal']
     },
     {
       id: 'dress-shoes',
@@ -655,7 +690,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #2a1a1a 0%, #0a0a0a 100%)',
       sizes: ['6', '7', '8', '9', '10', '11', '12', '13'],
       colors: ['Black', 'Brown', 'Cognac'],
-      highlights: 'Formal elegance'
+      highlights: 'Formal elegance',
+      occasions: ['formal', 'business']
     }
   ],
 
@@ -672,7 +708,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #1e3a5f 0%, #0f1d3d 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Performance fabric'
+      highlights: 'Performance fabric',
+      occasions: ['active', 'casual', 'gym']
     },
     {
       id: 'yoga-pants',
@@ -685,7 +722,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #3d3d3d 0%, #1a1a1a 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Black', 'Navy', 'Grey'],
-      highlights: 'Flexible comfort'
+      highlights: 'Flexible comfort',
+      occasions: ['active', 'casual', 'yoga']
     },
     {
       id: 'merino-wool-sweater',
@@ -698,7 +736,8 @@ const productsDatabase = {
       image: 'linear-gradient(135deg, #8b7355 0%, #6b5344 100%)',
       sizes: ['XS', 'S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Grey', 'Navy', 'Cream'],
-      highlights: 'Natural performance'
+      highlights: 'Natural performance',
+      occasions: ['active', 'outdoor', 'winter']
     }
   ]
 };
@@ -767,4 +806,13 @@ function getFeaturedProducts(limit = 8) {
   return getAllProducts()
     .sort((a, b) => b.reviews - a.reviews)
     .slice(0, limit);
+}
+
+/**
+ * Get products by occasion
+ */
+function getProductsByOccasion(occasion) {
+  return getAllProducts().filter(product =>
+    product.occasions && product.occasions.includes(occasion)
+  );
 }

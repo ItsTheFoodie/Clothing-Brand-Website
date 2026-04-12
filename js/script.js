@@ -799,6 +799,36 @@ window.addEventListener('load', () => {
 body.style.opacity = '0.95';
 body.style.transition = 'opacity 0.3s ease';
 
+/* ===== SHOP PAGE FILTERS ===== */
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const occasion = this.getAttribute('data-occasion');
+                let products;
+                
+                if (occasion === 'all') {
+                    products = getAllProducts();
+                } else {
+                    products = getProductsByOccasion(occasion);
+                }
+                
+                // Clear and re-render products
+                const container = document.getElementById('product-list');
+                if (container && typeof window.renderProducts === 'function') {
+                    window.renderProducts('product-list', products);
+                }
+            });
+        });
+    }
+});
+
 /* ===== KEYBOARD NAVIGATION ===== */
 document.querySelectorAll('a').forEach(link => {
     link.addEventListener('focus', function() {
