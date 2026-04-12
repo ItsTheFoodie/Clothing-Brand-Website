@@ -108,15 +108,6 @@
     }
   });
 
-    // Handle shop page - render all products in elements with id="product-list"
-    const productListElement = document.getElementById('product-list');
-    if (productListElement && typeof getAllProducts === 'function') {
-      const allProducts = getAllProducts();
-      productListElement.innerHTML = '';
-      allProducts.forEach(p => productListElement.appendChild(createProductCard(p)));
-    }
-  });
-
   // Export for interactive use
   window.renderProducts = renderProducts;
   window.renderProductsByCategory = renderProductsByCategory;
