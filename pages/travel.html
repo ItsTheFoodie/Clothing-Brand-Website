@@ -46,66 +46,8 @@
                 <li><a href="formal.html">Formal & Black Tie</a></li>
             </ul>
         </aside>
-        <div class="products-container">
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Travel Blazer</h3>
-                    <p class="product-description">Wrinkle-resistant elegance</p>
-                    <p class="product-price">$595</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Merino Base Layer</h3>
-                    <p class="product-description">Temperature regulating luxury</p>
-                    <p class="product-price">$275</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Packable Wrap</h3>
-                    <p class="product-description">Elegant companion for any journey</p>
-                    <p class="product-price">$385</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Travel Trousers</h3>
-                    <p class="product-description">Durable refinement for any destination</p>
-                    <p class="product-price">$425</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Lightweight Scarf</h3>
-                    <p class="product-description">Versatile luxury accessory</p>
-                    <p class="product-price">$225</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #b8a89a 0%, #9a8a7a 100%);"></div>
-                <div class="product-info">
-                    <h3>Versatile Dress</h3>
-                    <p class="product-description">One dress, countless looks</p>
-                    <p class="product-price">$525</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+        <div class="products-container" id="product-list" data-occasion="travel">
+            <!-- Products will be rendered dynamically -->
         </div>
     </section>
 
@@ -146,6 +88,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Lumière. All rights reserved.</p>
         </div>
-    </footer><script src="../js/script.js"></script>
+    </footer>
+    <script src="../js/products-database.js"></script>
+    <script src="../js/render-products.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

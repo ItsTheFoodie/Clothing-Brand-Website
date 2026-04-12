@@ -46,66 +46,8 @@
                 <li><a href="formal.html">Formal & Black Tie</a></li>
             </ul>
         </aside>
-        <div class="products-container">
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>Professional Blazer</h3>
-                    <p class="product-description">Sharp tailoring for the boardroom</p>
-                    <p class="product-price">$795</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>Structured Pencil Skirt</h3>
-                    <p class="product-description">Refined silhouette for power dressing</p>
-                    <p class="product-price">$425</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>White Dress Shirt</h3>
-                    <p class="product-description">Crisp cotton for everyday professionalism</p>
-                    <p class="product-price">$385</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>Business Trousers</h3>
-                    <p class="product-description">Impeccable fit and timeless elegance</p>
-                    <p class="product-price">$495</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>Executive Dress</h3>
-                    <p class="product-description">Commanding presence in refined style</p>
-                    <p class="product-price">$695</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #c8c0b0 0%, #a89080 100%);"></div>
-                <div class="product-info">
-                    <h3>Wool Blazer Dress</h3>
-                    <p class="product-description">One piece authority</p>
-                    <p class="product-price">$850</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+        <div class="products-container" id="product-list" data-occasion="business">
+            <!-- Products will be rendered dynamically -->
         </div>
     </section>
 
@@ -146,6 +88,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Lumière. All rights reserved.</p>
         </div>
-    </footer><script src="../js/script.js"></script>
+    </footer>
+    <script src="../js/products-database.js"></script>
+    <script src="../js/render-products.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

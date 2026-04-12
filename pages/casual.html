@@ -46,66 +46,8 @@
                 <li><a href="formal.html">Formal & Black Tie</a></li>
             </ul>
         </aside>
-        <div class="products-container">
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>Linen Button-Up</h3>
-                    <p class="product-description">Easy elegance for weekend days</p>
-                    <p class="product-price">$325</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>Perfect-Fit Jeans</h3>
-                    <p class="product-description">Luxe denim for effortless style</p>
-                    <p class="product-price">$495</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>Cashmere Crewneck</h3>
-                    <p class="product-description">Soft comfort for casual moments</p>
-                    <p class="product-price">$495</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>Everyday Dress</h3>
-                    <p class="product-description">Versatile piece for any setting</p>
-                    <p class="product-price">$585</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>White Cotton T-Shirt</h3>
-                    <p class="product-description">Staple luxury in pure form</p>
-                    <p class="product-price">$185</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #e8d9c8 0%, #d9c8b0 100%);"></div>
-                <div class="product-info">
-                    <h3>Lightweight Cardigan</h3>
-                    <p class="product-description">Layering made elegant</p>
-                    <p class="product-price">$425</p>
-                    <button class="add-to-cart">Add to Cart</button>
-                </div>
-            </div>
+        <div class="products-container" id="product-list" data-occasion="casual">
+            <!-- Products will be rendered dynamically -->
         </div>
     </section>
 
@@ -146,6 +88,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Lumière. All rights reserved.</p>
         </div>
-    </footer><script src="../js/script.js"></script>
+    </footer>
+    <script src="../js/products-database.js"></script>
+    <script src="../js/render-products.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

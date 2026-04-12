@@ -88,8 +88,20 @@
    * Auto-render on page load
    */
   document.addEventListener('DOMContentLoaded', function () {
+    // Look for containers with BOTH data-category AND data-occasion attributes (higher priority)
+    const combinedContainers = document.querySelectorAll('[data-category][data-occasion]');
+    combinedContainers.forEach(container => {
+      const occasion = container.getAttribute('data-occasion');
+      const category = container.getAttribute('data-category');
+      if (typeof getProductsByOccasionAndCategory === 'function') {
+        const products = getProductsByOccasionAndCategory(occasion, category);
+        container.innerHTML = '';
+        products.forEach(p => container.appendChild(createProductCard(p)));
+      }
+    });
+
     // Look for containers with data-category attribute
-    const categoryContainers = document.querySelectorAll('[data-category]');
+    const categoryContainers = document.querySelectorAll('[data-category]:not([data-occasion])');
     categoryContainers.forEach(container => {
       const category = container.getAttribute('data-category');
       if (typeof getProductsByCategory === 'function') {
@@ -99,8 +111,20 @@
       }
     });
 
-    // Render all products on shop page
-    if (document.getElementById('product-list')) {
+    // Look for containers with data-occasion attribute only
+    const occasionContainers = document.querySelectorAll('[data-occasion]:not([data-category])');
+    occasionContainers.forEach(container => {
+      const occasion = container.getAttribute('data-occasion');
+      if (typeof getProductsByOccasion === 'function') {
+        const products = getProductsByOccasion(occasion);
+        container.innerHTML = '';
+        products.forEach(p => container.appendChild(createProductCard(p)));
+      }
+    });
+
+    // Render all products on shop page (if no data-occasion attribute)
+    const productList = document.getElementById('product-list');
+    if (productList && !productList.getAttribute('data-occasion')) {
       if (typeof getAllProducts === 'function') {
         const products = getAllProducts();
         renderProducts('product-list', products);

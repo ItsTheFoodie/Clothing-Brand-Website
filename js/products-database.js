@@ -44,7 +44,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Ivory', 'Off-white'],
       highlights: 'Versatile essential',
-      occasions: ['casual', 'business', 'everyday']
+      occasions: ['casual', 'business', 'everyday', 'travel']
     },
     {
       id: 'floral-dress',
@@ -72,7 +72,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Natural', 'Sage', 'Taupe'],
       highlights: 'Breathable comfort',
-      occasions: ['casual', 'everyday']
+      occasions: ['casual', 'everyday', 'travel']
     },
     {
       id: 'silk-slip-dress',
@@ -128,7 +128,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Camel', 'Cream', 'Charcoal'],
       highlights: 'Timeless layering',
-      occasions: ['casual', 'everyday', 'winter']
+      occasions: ['casual', 'everyday', 'winter', 'travel']
     },
     {
       id: 'cashmere-cardigan',
@@ -170,7 +170,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Classic Blue', 'Dark Indigo', 'Black'],
       highlights: 'Everyday essential',
-      occasions: ['casual', 'everyday']
+      occasions: ['casual', 'everyday', 'travel']
     },
     {
       id: 'trench-coat',
@@ -184,7 +184,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['Khaki', 'Camel', 'Navy'],
       highlights: 'Timeless outerwear',
-      occasions: ['casual', 'formal', 'everyday']
+      occasions: ['casual', 'formal', 'everyday', 'travel']
     },
       
     {
@@ -227,7 +227,7 @@ const productsDatabase = {
       sizes: ['XS', 'S', 'M', 'L', 'XL'],
       colors: ['White', 'Natural', 'Cream'],
       highlights: 'Resort wear',
-      occasions: ['beach', 'vacation', 'summer']
+      occasions: ['beach', 'vacation', 'summer', 'travel']
     }
   ],
 
@@ -245,7 +245,7 @@ const productsDatabase = {
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Cream', 'Grey', 'Navy'],
       highlights: 'Ultimate comfort and warmth',
-      occasions: ['casual', 'formal', 'winter']
+      occasions: ['casual', 'formal', 'winter', 'travel']
     },
     {
       id: 'oxford-button-down',
@@ -259,7 +259,7 @@ const productsDatabase = {
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['White', 'Light Blue', 'Pale Pink'],
       highlights: 'Versatile classic',
-      occasions: ['business', 'casual', 'formal']
+      occasions: ['business', 'casual', 'formal', 'travel']
     },
     {
       id: 'striped-shirt',
@@ -301,7 +301,7 @@ const productsDatabase = {
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Natural', 'White', 'Khaki'],
       highlights: 'Summer essential',
-      occasions: ['casual', 'summer', 'vacation']
+      occasions: ['casual', 'summer', 'vacation', 'travel']
     },
     {
       id: 'mens-sweater',
@@ -315,7 +315,7 @@ const productsDatabase = {
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Camel', 'Navy', 'Charcoal'],
       highlights: 'Classic warmth',
-      occasions: ['casual', 'everyday', 'winter']
+      occasions: ['casual', 'everyday', 'winter', 'travel']
     },
     {
       id: 'men-chinos',
@@ -329,7 +329,7 @@ const productsDatabase = {
       sizes: ['28', '30', '32', '34', '36', '38'],
       colors: ['Khaki', 'Navy', 'Grey'],
       highlights: 'Everyday versatile',
-      occasions: ['casual', 'business']
+      occasions: ['casual', 'business', 'travel']
     },
     {
       id: 'occasion-trousers',
@@ -385,7 +385,7 @@ const productsDatabase = {
       sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       colors: ['Navy', 'Light Blue', 'White'],
       highlights: 'Adventure ready',
-      occasions: ['active', 'outdoor', 'travel']
+      occasions: ['active', 'outdoor', 'travel', 'casual']
     },
     {
       id: 'track-jacket',
@@ -538,7 +538,7 @@ const productsDatabase = {
     {
       id: 'pearl-necklace',
       name: 'Pearl Necklace',
-      category: 'Accessories',
+      category: 'Women',
       price: 695,
       rating: 5,
       reviews: 178,
@@ -552,7 +552,7 @@ const productsDatabase = {
     {
       id: 'elegant-watch',
       name: 'Elegant Watch',
-      category: 'Accessories',
+      category: 'Women',
       price: 1295,
       rating: 5,
       reviews: 142,
@@ -566,7 +566,7 @@ const productsDatabase = {
     {
       id: 'sunglasses',
       name: 'Sunglasses',
-      category: 'Accessories',
+      category: 'Women',
       price: 385,
       rating: 5,
       reviews: 165,
@@ -580,7 +580,7 @@ const productsDatabase = {
     {
       id: 'leather-belt',
       name: 'Leather Belt',
-      category: 'Accessories',
+      category: 'Women',
       price: 225,
       rating: 5,
       reviews: 154,
@@ -594,7 +594,7 @@ const productsDatabase = {
     {
       id: 'wool-beret',
       name: 'Wool Beret',
-      category: 'Accessories',
+      category: 'Women',
       price: 195,
       rating: 5,
       reviews: 138,
@@ -608,7 +608,7 @@ const productsDatabase = {
     {
       id: 'cashmere-scarf',
       name: 'Cashmere Scarf',
-      category: 'Accessories',
+      category: 'Women',
       price: 495,
       rating: 5,
       reviews: 171,
@@ -617,7 +617,7 @@ const productsDatabase = {
       sizes: ['One Size'],
       colors: ['Cream', 'Grey', 'Burgundy'],
       highlights: 'Pure luxury',
-      occasions: ['casual', 'formal', 'winter']
+      occasions: ['casual', 'formal', 'winter', 'travel']
     }
   ],
 
@@ -815,4 +815,15 @@ function getProductsByOccasion(occasion) {
   return getAllProducts().filter(product =>
     product.occasions && product.occasions.includes(occasion)
   );
+}
+
+/**
+ * Get products by both occasion AND category
+ */
+function getProductsByOccasionAndCategory(occasion, category) {
+  return getAllProducts().filter(product => {
+    const matchesOccasion = product.occasions && product.occasions.includes(occasion);
+    const matchesCategory = product.category.toLowerCase() === category.toLowerCase();
+    return matchesOccasion && matchesCategory;
+  });
 }

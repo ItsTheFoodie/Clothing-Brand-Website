@@ -811,17 +811,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 
                 const occasion = this.getAttribute('data-occasion');
+                const container = document.getElementById('product-list');
+                const categoryAttr = container ? container.getAttribute('data-category') : null;
                 let products;
                 
                 if (occasion === 'all') {
-                    products = getAllProducts();
+                    if (categoryAttr && typeof getProductsByCategory === 'function') {
+                        // If container has a category, show all products from that category
+                        products = getProductsByCategory(categoryAttr);
+                    } else if (typeof getAllProducts === 'function') {
+                        products = getAllProducts();
+                    }
                 } else {
-                    products = getProductsByOccasion(occasion);
+                    // Check if we should filter by both occasion and category
+                    if (categoryAttr && typeof getProductsByOccasionAndCategory === 'function') {
+                        products = getProductsByOccasionAndCategory(occasion, categoryAttr);
+                    } else if (typeof getProductsByOccasion === 'function') {
+                        products = getProductsByOccasion(occasion);
+                    }
                 }
                 
                 // Clear and re-render products
-                const container = document.getElementById('product-list');
-                if (container && typeof window.renderProducts === 'function') {
+                if (container && products && typeof window.renderProducts === 'function') {
                     window.renderProducts('product-list', products);
                 }
             });
